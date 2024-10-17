@@ -1,0 +1,21 @@
+[pyprland]
+plugins = [
+  "magnify",
+  "scratchpads"
+]
+
+[scratchpads.tm]
+animation = "fromTop"
+command = "kitty --class kitty-tm -e btop"
+class = "kitty-tm"
+size = "75% 75%"
+max_size = "1920px 100%"
+margin = 50
+
+[scratchpads.fm]
+animation = "fromRight"
+command = "kitty --class kitty-fm -e yazi"
+class = "kitty-fm"
+size = "75% 75%"
+max_size = "1920px 100%"
+margin = 20
