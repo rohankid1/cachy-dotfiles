@@ -1,0 +1,24 @@
+@import "./colors";
+@import "./vars.scss";
+
+.rolauncher {
+    background: $background;
+    color: $foreground;
+    border-radius: 16px;
+    border: 4px solid $color10;
+}
+
+.rolauncher_entry {
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px dotted $color1;
+    color: $foreground;
+    background: transparent;
+}
+
+.rolauncher_item {
+    background-color: $color2;
+}
+
+.rolauncher_scroll {}

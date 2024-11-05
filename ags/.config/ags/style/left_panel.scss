@@ -1,0 +1,61 @@
+.panel_left_content {
+    font-family: $font_family;
+    border-radius: 20px;
+    border: 2px solid $cursor;
+    background: $background;
+    color: $foreground;
+    padding: 14px;
+}
+
+.panel_left_calendar {
+    background: $color2;
+    color: $foreground;
+    border-radius: 10px;
+}
+
+.panel_left_scrollable_note {
+    padding: 5px;
+    border-radius: 10px;
+    background: $color2;
+}
+
+.panel_left_avatar {
+    min-width: 8.5em;
+    min-height: 8.5em;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+// .panel_left_note {}
+
+.panel_left_profile_container {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: $color2;
+}
+
+.grid_system_opts {
+    padding: 8px;
+    font-size: large;
+    border-radius: 14px;
+    background: $color2;
+    color: $foreground;
+
+    &:hover {
+        background: $color0;
+    }
+}
+
+.favourite_app {
+    padding: 8px;
+    font-size: large;
+    border-radius: 14px;
+    background: $color2;
+    color: $foreground;
+
+    &:hover {
+        background: $color0;
+    }
+}

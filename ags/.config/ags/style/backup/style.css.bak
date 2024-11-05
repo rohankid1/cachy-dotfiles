@@ -1,0 +1,187 @@
+@import url("/home/rohan/.cache/wal/colors-waybar.css");
+
+menu {
+    border-radius: 20px;
+    padding: 8px;
+    background: @background;
+    border: 2px solid @cursor;
+}
+
+menuitem {
+    background: transparent;
+    border-radius: 5px;
+    color: @foreground;
+}
+
+menuitem:hover {
+    background: @color1;
+}
+
+window {
+    background: transparent;
+    font-family: "Ubuntu";
+}
+
+window.RoBar {
+    background: transparent;
+    color: @foreground;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+window.RoBar .workspaces,
+.system-options,
+.date,
+.tray {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 4px;
+    background-color: @background;
+    border-radius: 99px;
+}
+
+window.RoBar .date {
+    margin-right: 10px;
+}
+
+window.RoBar button {
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 999px;
+    border: 2px solid @foreground;
+}
+
+window.RoBar button.media {
+    margin-top: 10px;
+}
+
+window.RoBar button.focused {
+    border: 2px double @color7;
+}
+
+window.RoBar .tray {
+    margin-top: 10px;
+    background-color: @background;
+}
+
+window.RoBar .tray-item:not(:first-child) {
+    margin-left: 10px;
+}
+
+/*  Launcher  */
+
+window.rolauncher {
+    background: @background;
+    color: @foreground;
+    border-radius: 16px;
+}
+
+window .rolauncher_entry {
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px dotted @color1;
+    color: @foreground;
+    background: transparent;
+}
+
+window button.rolauncher_item {
+    border-radius: 16px;
+    background: @color2;
+}
+
+window .rolauncher_scroll {
+    padding: 6px;
+    border: 2px dotted @color1;
+    border-radius: 8px;
+}
+
+/*  Left Side Panel  */
+
+.panel_left_content {
+    font-family: 'Ubuntu';
+    /* border-top-right-radius: 20px; */
+    /* border-bottom-right-radius: 20px; */
+    border-radius: 20px;
+    border: 2px solid @cursor;
+    background: @background;
+    color: @foreground;
+    padding: 14px;
+}
+
+.panel_left_calendar {
+    background: @color2;
+    border-radius: 10px;
+}
+
+.panel_left_scrollable_note {
+    padding: 5px;
+    border-radius: 10px;
+    background: @color4;
+}
+
+.panel_left_avatar {
+    min-width: 8.5em;
+    min-height: 8.5em;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.panel_left_profile_container {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: @color2;
+}
+
+.grid_system_opts,
+.favourite_app {
+    padding: 8px;
+    font-size: large;
+    border-radius: 14px;
+    background: @color2;
+    color: @foreground;
+}
+
+.grid_system_opts:hover,
+.favourite_app:hover {
+    background: @color0;
+}
+
+/*  Wallpaper Changer  */
+
+.wpc_header {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid @color4;
+}
+
+.wpc_content {
+    padding: 16px;
+}
+
+.wpc_grid_item_container {
+    border: 2px solid @cursor;
+    border-radius: 14px;
+    color: @foreground;
+    padding: 8px;
+}
+
+.wpc_grid_item {
+    min-width: 8.5em;
+    min-height: 8.5em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 14px;
+}
+
+.wpc_button {
+    background: transparent;
+    border: 2px solid @color4
+}
+
+.wpc_button:hover {
+    background: @color4;
+}

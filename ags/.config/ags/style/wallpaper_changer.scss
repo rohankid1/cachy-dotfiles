@@ -1,0 +1,37 @@
+@import "./colors";
+@import "./vars";
+
+.wpc_header {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid $color4;
+}
+
+.wpc_content {
+    padding: 16px;
+}
+
+.wpc_grid_item_container {
+    border: 2px solid $cursor;
+    border-radius: 14px;
+    color: $foreground;
+    padding: 8px;
+}
+
+.wpc_grid_item {
+    min-width: 8.5em;
+    min-height: 8.5em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 14px;
+}
+
+.wpc_button {
+    background: transparent;
+    border: 2px solid $color4;
+
+    &:hover {
+        background: $color4;
+    }
+}

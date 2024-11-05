@@ -1,0 +1,11 @@
+@import "./colors.scss";
+@import "./vars.scss";
+
+.panel_right_content {
+    font-family: $font_family;
+    background-color: $background;
+    color: $foreground;
+    padding: 14px;
+    border-radius: 20px;
+    border: 2px solid $cursor;
+}

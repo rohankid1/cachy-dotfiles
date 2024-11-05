@@ -1,0 +1,26 @@
+@import "./vars";
+@import "./colors";
+@import "./bar";
+@import "./launcher";
+@import "./context_menu";
+@import "./left_panel";
+@import "./right_panel.scss";
+@import "./wallpaper_changer";
+@import "./notifications.scss";
+@import "./common.scss";
+
+button {
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 16px;
+    background: $color2;
+
+    &:hover {
+        background: $color4;
+    }
+}
+
+window {
+    background: transparent;
+    font-family: $font_family;
+}

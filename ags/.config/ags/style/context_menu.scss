@@ -1,0 +1,19 @@
+@import "./colors";
+@import "./vars.scss";
+
+menu {
+    border-radius: 20px;
+    padding: 8px;
+    background: $background;
+    border: 2px solid $cursor;
+}
+
+menuitem {
+    background: transparent;
+    border-radius: 5px;
+    color: $foreground;
+
+    &:hover {
+        background: $color2;
+    }
+}

@@ -1,0 +1,30 @@
+@import "./vars.scss";
+@import "./colors.scss";
+
+scale {
+    min-height: 18px;
+    border-radius: 18px;
+
+    slider {
+        all: unset;
+        min-height: 18px;
+        min-width: 18px;
+        margin: -8px;
+    }
+
+    trough {
+        outline: none;
+        background-color: $color10;
+        border-radius: 24px;
+        min-height: 20px;
+    }
+
+    highlight {
+        background-color: $color15;
+        border-radius: 24px;
+    }
+
+    fill {
+        background-color: transparent;
+    }
+}

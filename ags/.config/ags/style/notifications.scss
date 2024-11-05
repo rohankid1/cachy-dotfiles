@@ -1,0 +1,67 @@
+@import "./colors.scss";
+@import "./vars.scss";
+
+.notification_icon {
+    min-width: 68px;
+    min-height: 68px;
+    margin-right: 1em;
+
+    box {
+        min-width: 68px;
+        min-height: 68px;
+        border-radius: 10px;
+    }
+
+    image {
+        font-size: 58px;
+        margin: 5px;
+        background: $foreground;
+    }
+}
+
+.notification {
+    min-width: 350px;
+    border-radius: 14px;
+    padding: 1em;
+    margin: .5em;
+    border: 1px solid $color13;
+    background: $background;
+    color: $foreground;
+    padding: .5em;
+
+    .critical {
+        border: 1px solid red;
+    }
+}
+
+
+.notification_title {
+    font-family: $notification_font_family;
+    color: $foreground;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 4px;
+}
+
+.notification_body {
+    font-family: $notification_font_family;
+    margin-bottom: 4px;
+}
+
+.notification_actions,
+.notification_action_button {
+    margin: 0 .4em;
+    margin-top: .8em;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.notification_popups {
+    padding: .5em;
+}
