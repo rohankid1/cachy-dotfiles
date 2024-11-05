@@ -1,3 +1,7 @@
+> [!CAUTION]
+> This AGS config is not finished and has memory leaks. I am trying to fix this,
+> and make it the best as I can, so for the time being, do not use this, unless 
+> you are willing to contribute.
 
 # Starter Config
 
