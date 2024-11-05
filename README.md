@@ -12,11 +12,17 @@ https://github.com/user-attachments/assets/9a7923f3-5f28-4dde-b4a7-448f0d757012
 * GTK Theme: Adwaita
 
 For a full setup, these packages are required:
-`sudo pacman -S libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family`
+```
+sudo pacman -S libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family
+```
 
+[!IMPORTANT]
 Some packages are not available in the official Arch repos, but they are in the AUR. Use an AUR helper such as yay or paru:
-`paru -S pyprland hyprpolkitagent-git grimshot-bin-sway`
+```
+paru -S pyprland hyprpolkitagent-git grimshot-bin-sway
+```
 
+## Browser
 There are two variants of the Zen browser you can install: generic and the specific. The specific one uses AVX2 for better performance. You can check if your CPU supports it [here](https://docs.zen-browser.app/guides/generic-optimized#check-whether-your-device-supports-avx2).
 If your CPU does support it, run `paru -S zen-browser-avx2-bin` (`zen-twilight-av2x-bin` for nightly), otherwise run `paru -S zen-browser-bin` or `zen-twilight-bin`. You can change paru to whatever AUR helper you use.
 
