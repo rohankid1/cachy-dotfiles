@@ -13,7 +13,7 @@ export default {
         position: ["top", "right"]
     },
     workspaces: {
-        labelled: true,
+        labelled: false,
     },
     apps: {
         browser: "zen-browser",
