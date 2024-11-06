@@ -1,113 +1,110 @@
 window.RoBar {
-  background: transparent;
-  color: #6F2B8C;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-window.RoBar .workspaces {
-  margin-left: 10px;
-  margin-top: 10px;
-  padding: 4px;
-  background-color: #0d0416;
-  border-radius: 99px;
+  background: #1f1f2b;
+  color: #9B96CF;
 }
 window.RoBar button {
-  min-width: 24px;
-  min-height: 24px;
+  transition: border-color 0.3s ease-in-out;
   border-radius: 999px;
-  border: 2px solid #c69fd9;
-  background-color: #6A2B97;
+  border: 2px solid #d3d9f6;
+  min-width: 14px;
+  min-height: 14px;
+  color: #d3d9f6;
 }
-window.RoBar button.media {
-  margin-top: 10px;
-}
-window.RoBar button.focused {
-  border: 2px double #c69fd9;
-}
+window.RoBar .panel_toggler,
+window.RoBar .np_toggler,
+window.RoBar .workspaces,
+window.RoBar .media,
+window.RoBar .date,
 window.RoBar .tray {
   margin-top: 10px;
-  background-color: #0d0416;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+  padding: 4px;
+  border: 2px solid #d3d9f6;
+  min-width: 30px;
+  margin-left: 5px;
+  color: #d3d9f6;
+  border-radius: 0;
+  border-radius: 14px;
 }
-window.RoBar .tray-item:not(:first-child) {
-  margin-left: 10px;
+window.RoBar .workspaces .ws {
+  transition: background-color 0.3s ease-in-out;
+  border-color: #d3d9f6;
+  color: #d3d9f6;
+  margin-left: 5px;
 }
-window.RoBar .date {
-  margin-right: 10px;
+window.RoBar .workspaces .ws:last-child {
+  margin-right: 5px;
 }
-window.RoBar .system-options,
-window.RoBar .date,
-window.RoBar .tray,
-window.RoBar .workspaces {
-  margin-left: 10px;
-  margin-top: 10px;
-  padding: 8px;
-  background-color: rgba(13, 4, 22, 0.4);
-  border: 2px solid #c69fd9;
-  color: #c69fd9;
-  border-radius: 99px;
+window.RoBar .workspaces .focused {
+  border-color: #CBA6F7;
+  background-color: #1f1f2b;
 }
-window.RoBar .system-options *:not(:first-child),
-window.RoBar .date *:not(:first-child),
-window.RoBar .tray *:not(:first-child),
-window.RoBar .workspaces *:not(:first-child) {
-  margin-left: 6px;
+window.RoBar .tray-item {
+  border: 2px solid #1f1f2b;
+  padding: 4px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+window.RoBar .tray-item:last-child {
+  margin-right: 5px;
 }
 
 .rolauncher {
-  background: #0d0416;
-  color: #c69fd9;
+  background: #1f1f2b;
+  color: #d3d9f6;
   border-radius: 16px;
-  border: 4px solid #6A2B97;
+  border: 4px solid #89B4FA;
 }
 
 .rolauncher_entry {
   outline: none;
   padding: 8px;
   border-radius: 8px;
-  border: 2px dotted #6F2B8C;
-  color: #c69fd9;
+  border: 2px dotted #9B96CF;
+  color: #d3d9f6;
   background: transparent;
 }
 
 .rolauncher_item {
-  background-color: #6A2B97;
+  background-color: #89B4FA;
 }
 
 menu {
   border-radius: 20px;
   padding: 8px;
-  background: #0d0416;
-  border: 2px solid #c69fd9;
+  background: #1f1f2b;
+  border: 2px solid #d3d9f6;
 }
 
 menuitem {
   background: transparent;
   border-radius: 5px;
-  color: #c69fd9;
+  color: #d3d9f6;
 }
 menuitem:hover {
-  background: #6A2B97;
+  background: #89B4FA;
 }
 
 .panel_left_content {
   font-family: "Ubuntu";
   border-radius: 20px;
-  border: 2px solid #c69fd9;
-  background: #0d0416;
-  color: #c69fd9;
+  border: 2px solid #d3d9f6;
+  background: #1f1f2b;
+  color: #d3d9f6;
   padding: 14px;
 }
 
 .panel_left_calendar {
-  background: #6A2B97;
-  color: #c69fd9;
+  background: #89B4FA;
+  color: #d3d9f6;
   border-radius: 10px;
 }
 
 .panel_left_scrollable_note {
   padding: 5px;
   border-radius: 10px;
-  background: #6A2B97;
+  background: #89B4FA;
 }
 
 .panel_left_avatar {
@@ -122,44 +119,44 @@ menuitem:hover {
 .panel_left_profile_container {
   border-radius: 10px;
   padding: 5px;
-  background-color: #6A2B97;
+  background-color: #89B4FA;
 }
 
 .grid_system_opts {
   padding: 8px;
   font-size: large;
   border-radius: 14px;
-  background: #6A2B97;
-  color: #c69fd9;
+  background: #89B4FA;
+  color: #d3d9f6;
 }
 .grid_system_opts:hover {
-  background: #0d0416;
+  background: #1f1f2b;
 }
 
 .favourite_app {
   padding: 8px;
   font-size: large;
   border-radius: 14px;
-  background: #6A2B97;
-  color: #c69fd9;
+  background: #89B4FA;
+  color: #d3d9f6;
 }
 .favourite_app:hover {
-  background: #0d0416;
+  background: #1f1f2b;
 }
 
 .panel_right_content {
   font-family: "Ubuntu";
-  background-color: #0d0416;
-  color: #c69fd9;
+  background-color: #1f1f2b;
+  color: #d3d9f6;
   padding: 14px;
   border-radius: 20px;
-  border: 2px solid #c69fd9;
+  border: 2px solid #d3d9f6;
 }
 
 .wpc_header {
   padding: 8px;
   margin-bottom: 10px;
-  border-bottom: 2px solid #9B349E;
+  border-bottom: 2px solid #C49CEA;
 }
 
 .wpc_content {
@@ -167,9 +164,9 @@ menuitem:hover {
 }
 
 .wpc_grid_item_container {
-  border: 2px solid #c69fd9;
+  border: 2px solid #d3d9f6;
   border-radius: 14px;
-  color: #c69fd9;
+  color: #d3d9f6;
   padding: 8px;
 }
 
@@ -184,10 +181,10 @@ menuitem:hover {
 
 .wpc_button {
   background: transparent;
-  border: 2px solid #9B349E;
+  border: 2px solid #C49CEA;
 }
 .wpc_button:hover {
-  background: #9B349E;
+  background: #C49CEA;
 }
 
 .notification_icon {
@@ -203,7 +200,7 @@ menuitem:hover {
 .notification_icon image {
   font-size: 58px;
   margin: 5px;
-  background: #c69fd9;
+  background: #d3d9f6;
 }
 
 .notification {
@@ -211,9 +208,9 @@ menuitem:hover {
   border-radius: 14px;
   padding: 1em;
   margin: 0.5em;
-  border: 1px solid #B0349C;
-  background: #0d0416;
-  color: #c69fd9;
+  border: 1px solid #CBA6F7;
+  background: #1f1f2b;
+  color: #d3d9f6;
   padding: 0.5em;
 }
 .notification .critical {
@@ -222,7 +219,7 @@ menuitem:hover {
 
 .notification_title {
   font-family: "Ubuntu";
-  color: #c69fd9;
+  color: #d3d9f6;
   font-weight: bold;
   font-size: 1.4em;
   margin-bottom: 4px;
@@ -251,6 +248,16 @@ menuitem:hover {
   padding: 0.5em;
 }
 
+button {
+  all: unset;
+  padding: 4px;
+  background: transparent;
+  border-radius: 16px;
+}
+button:hover {
+  background: #C49CEA;
+}
+
 scale {
   min-height: 18px;
   border-radius: 18px;
@@ -263,26 +270,16 @@ scale slider {
 }
 scale trough {
   outline: none;
-  background-color: #6A2B97;
+  background-color: #89B4FA;
   border-radius: 24px;
   min-height: 20px;
 }
 scale highlight {
-  background-color: #c69fd9;
+  background-color: #d3d9f6;
   border-radius: 24px;
 }
 scale fill {
   background-color: transparent;
-}
-
-button {
-  min-width: 20px;
-  min-height: 20px;
-  border-radius: 16px;
-  background: #6A2B97;
-}
-button:hover {
-  background: #9B349E;
 }
 
 window {

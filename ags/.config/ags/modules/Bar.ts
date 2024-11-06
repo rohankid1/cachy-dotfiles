@@ -16,7 +16,7 @@ function Workspaces() {
       const idIcon = userPref.icons.workspace_icons[id];
 
       return Widget.Button({
-        class_name: activeId.as((a) => (id === a - 1 ? "focused" : "")),
+        class_names: activeId.as(a => id === a - 1 ? ["ws", "focused"] : ["ws"]),
         label: userPref.workspaces.labelled ? idIcon : "",
         on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id + 1}`),
       });
@@ -26,11 +26,7 @@ function Workspaces() {
 
 function PanelToggler() {
   return Widget.Button({
-    css:
-      `
-    margin-top: 10px;
-    margin-left: 20px;
-    `,
+    class_name: `panel_toggler`,
     child: getPreferredIconV2("home")!,
     on_clicked: () => {
       App.toggleWindow("LeftPanel");
@@ -66,7 +62,7 @@ function Player(player: MprisPlayer) {
         child: Widget.Box({
           spacing: 20,
           children: [
-            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "skip")!.symbolic }),
+            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "skip")?.symbolic }),
             Widget.Label("Skip")
           ]
         }),
@@ -77,7 +73,7 @@ function Player(player: MprisPlayer) {
         child: Widget.Box({
           spacing: 20,
           children: [
-            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "previous")!.symbolic }),
+            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "previous")?.symbolic }),
             Widget.Label("Previous")
           ],
         }),
@@ -99,11 +95,7 @@ function Player(player: MprisPlayer) {
 
 function NotificationPanelToggler() {
   return Widget.Button({
-    css:
-      `
-    margin-top: 10px;
-    margin-right: 20px;
-    `,
+    class_name: `np_toggler`,
     child: getPreferredIconV2("notification_bell")!,
     on_clicked: () => {
       App.toggleWindow("RightPanel");

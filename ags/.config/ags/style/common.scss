@@ -1,6 +1,20 @@
 @import "./vars.scss";
 @import "./colors.scss";
 
+button {
+    all: unset;
+    padding: 4px;
+    background: transparent;
+    // min-width: 20px;
+    // min-height: 20px;
+    border-radius: 16px;
+
+    &:hover {
+        background: $color4;
+    }
+}
+
+
 scale {
     min-height: 18px;
     border-radius: 18px;
