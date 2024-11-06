@@ -8,4 +8,7 @@ fi
 
 imgpath=$(swww query | awk -F 'image: ' '{print $2}')
 wal -i $imgpath
-pywalfox update
+
+if [ $(command -v pywalfox) ]; then
+  pywalfox update
+fi
