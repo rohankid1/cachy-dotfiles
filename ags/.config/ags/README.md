@@ -8,7 +8,7 @@
 # Getting Started
 To get started, clone this repository, and put the entire content in `~/.config/ags`.
 You can alternatively make a symbolic link by running `stow ags` in the root directory
-of the repository. If everything is set up correctly, running `ags` should just work.s
+of the repository. If everything is set up correctly, running `ags` should just work.
 
 # Starter Config
 
