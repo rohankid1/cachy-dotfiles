@@ -1,6 +1,10 @@
 # cachy-dotfiles
 Dotfiles for my CachyOS system
 
+> [!NOTE]
+> This video is kind of outdated since I have made a lot of changes, most notably making my own AGS config.
+> I will post updated pictures/video when I have a fully usable AGS setup.
+
 https://github.com/user-attachments/assets/9a7923f3-5f28-4dde-b4a7-448f0d757012
 
 # Setup
