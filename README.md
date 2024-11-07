@@ -13,13 +13,13 @@ https://github.com/user-attachments/assets/9a7923f3-5f28-4dde-b4a7-448f0d757012
 
 For a full setup, these packages are required:
 ```
-sudo pacman -S aylurs-gtk-shell libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family
+sudo pacman -S libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family
 ```
 
 > [!IMPORTANT]
 > Some packages are not available in the official Arch repos, but they are in the AUR. Use an AUR helper such as yay or paru:
 > ```
-> paru -S pyprland hyprpolkitagent-git grimshot-bin-sway
+> paru -S pyprland hyprpolkitagent-git grimshot-bin-sway aylurs-gtk-shell
 > ```
 
 ## Browser
