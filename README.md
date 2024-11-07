@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/9a7923f3-5f28-4dde-b4a7-448f0d757012
 
 For a full setup, these packages are required:
 ```
-sudo pacman -S libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family
+sudo pacman -S aylurs-gtk-shell libnotify python-pywal starship kitty hyprland fuzzel fish hyprlock hypridle otf-hermit-nerd ttf-ubuntu-font-family
 ```
 
 > [!IMPORTANT]
