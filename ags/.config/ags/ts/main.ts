@@ -10,27 +10,28 @@ import Notifications from "modules/Notifications";
 const scss = `${styleDir}/style.scss`;
 const css = `${styleDir}/style.css`;
 
+function monitorCssFiles(files: Array<string>) {
+  for (const file of files) {
+    Utils.monitorFile(file, async () => {
+      try {
+        await Utils.execAsync(`sass ${scss} ${css}`);
+
+        App.applyCss(css, true);
+      } catch (err) {
+        print(`Error transpiling scss (monitoring ${file})`);
+      }
+    });
+  }
+}
+
 Utils.execAsync(`sass ${scss} ${css}`);
 
-Utils.monitorFile(`${pywalDir}/colors.css`, async () => {
-  try {
-    await Utils.execAsync(`sass ${scss} ${css}`);
+const filesToMonitor = [
+  `${pywalDir}/colors.css`,
+  `${styleDir}/style.scss`
+];
 
-    App.applyCss(css, true);
-  } catch (err) {
-    print(`Error transpiling scss: ${err} (monitoring style dir)`)
-  }
-});
-
-Utils.monitorFile(`${styleDir}/style.scss`, async () => {
-  try {
-    await Utils.execAsync(`sass ${scss} ${css}`);
-
-    App.applyCss(css, true);
-  } catch (err) {
-    print(`Error transpiling scss: ${err} (monitoring style dir)`)
-  }
-});
+monitorCssFiles(filesToMonitor);
 
 if (userPref.restart_on_cfg_change) {
   Utils.monitorFile(`${App.configDir}/userPref.ts`, () => {
