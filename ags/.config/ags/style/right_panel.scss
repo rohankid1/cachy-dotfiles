@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./vars.scss";
+@import "./common.scss";
 
 .panel_right_content {
     font-family: $font_family;
@@ -8,4 +9,29 @@
     padding: 14px;
     border-radius: 20px;
     border: 2px solid $cursor;
+}
+
+.panel_right_notification_item {
+    background-color: $color2;
+    border-radius: 10px;
+    border: 5px solid $color15;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: $foreground;
+
+    &:first-child {
+        margin-top: 25px;
+    }
+}
+
+.panel_right_notification_summary {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid $background;
+}
+
+// .panel_right_notification_body {}
+
+.panel_right_notification_close {
+    @extend .ro_btn;
 }

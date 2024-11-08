@@ -4,11 +4,58 @@ import { Notification } from "types/service/notifications";
 import userPref from "userPref";
 import { getPreferredIconV2 } from "utils";
 import PopupWindow from "widgets/PopupWindow";
-import { Notification as Notif } from "./Notifications";
-
-// WIP section
+import { Notification as Notif, NotificationIcon } from "./Notifications";
+import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
+import Pango from "types/@girs/pango-1.0/pango-1.0";
 
 const notifications = await Service.import("notifications");
+
+function Animated(n: Notification) {
+    return Widget.Revealer({
+        transition: "slide_down",
+        child: NotificationItem(n),
+        setup: self => Utils.timeout(200, () => {
+            if (!self.is_destroyed)
+                self.reveal_child = true;
+        }),
+    })
+}
+
+function NotificationItem(n: Notification) {
+    return Widget.Box({
+        attribute: { id: n.id },
+        spacing: 10,
+        hexpand: true,
+        vexpand: false,
+        vertical: true,
+        class_name: `panel_right_notification_item`,
+        children: [
+            Widget.Label({
+                class_name: `panel_right_notification_summary`,
+                vpack: "start",
+                hpack: "start",
+                hexpand: true,
+                label: n.summary,
+            }),
+            Widget.Label({
+                class_name: `panel_right_notification_body`,
+                vpack: "center",
+                hpack: "start",
+                wrap: true,
+                max_width_chars: 32,
+                wrap_mode: Pango.WrapMode.WORD_CHAR,
+                label: n.body,
+            }),
+            Widget.Button({
+                class_name: `panel_right_notification_close`,
+                hexpand: true,
+                vpack: "end",
+                child: getPreferredIconV2("close") || Widget.Label("X"),
+                on_clicked: () => n.close(),
+            }),
+        ]
+    });
+}
 
 function Header() {
     return Widget.Box({
@@ -22,67 +69,75 @@ function Header() {
                 css: `font-size: 24px; font-weight: bolder;`,
             }),
             Widget.Button({
+                class_name: "ro_btn",
                 hexpand: false,
                 vexpand: false,
                 hpack: "end",
+                sensitive: notifications.bind("notifications").as(n => n.length > 0),
                 child: getPreferredIconV2("clear_all")!,
                 tooltip_text: "Clear Notifications",
-                on_clicked: () => {
-                    // clear notifications
-                },
+                on_clicked: notifications.clear,
             })
         ]
     })
 }
 
 function Notifications() {
-    return Widget.Box({
-        vertical: true,
-        spacing: 10,
-        children: [
-            Widget.Switch({
-                active: notifications.bind("dnd").as(Boolean),
-                on_activate: ({ active }) => {
-                    notifications.dnd = active;
-                    print(`dnd is ${notifications.dnd}`);
-                }
-            }),
-            Widget.Scrollable({
-                hscroll: "never",
-                vscroll: "automatic",
-                hpack: "center",
-                child: Widget.Box({
-                    vertical: true,
-                    children: notifications.notifications.map(Notif),
-                    setup: self => {
-                        // on notified
-                        self.hook(notifications, (_: any, id: number) => {
-                            const n = notifications.getNotification(id);
-                            if (n)
-                                self.children = [Notif(n), ...self.children];
-                        }, "notified");
+    const map: Map<number, ReturnType<typeof Animated>> = new Map;
 
-                        // on dismiss
-                        self.hook(notifications, (_: any, id: number) => {
-                            self.children.find(n => n.attribute.id)?.destroy();
-                        }, "dismissed");
-                    }
-                }),
-            }),
-        ]
+    function remove(_: unknown, id: number) {
+        const n = map.get(id);
+
+        if (n) {
+            n.reveal_child = false;
+            Utils.timeout(200, () => {
+                n.destroy();
+                map.delete(id);
+            });
+        }
+    }
+
+    const box = Widget.Box({
+        vertical: true,
+        children: notifications.notifications.map(n => {
+            const animated = Animated(n);
+            map.set(n.id, animated);
+            return animated;
+        }),
+        visible: notifications.bind("notifications").as(n => n.length > 0),
     });
+
+    return box
+        .hook(notifications, remove, "closed")
+        .hook(notifications, (_, id) => {
+            if (id) {
+                if (map.has(id))
+                    remove(null, id);
+
+                const n = notifications.getNotification(id)!;
+                const anim = Animated(n);
+                map.set(id, anim);
+                box.children = [anim, ...box.children];
+            }
+        }, "notified");
 }
 
 function ActualContent() {
     return Widget.Stack({
         class_name: "right_panel_content_stack",
+        transition: "slide_left_right",
         children: {
             "notifications": Widget.Box({
                 vertical: true,
                 class_name: `right_panel_notifications`,
                 children: [
                     Header(),
-                    Notifications(),
+                    Widget.Scrollable({
+                        hscroll: "never",
+                        vscroll: "automatic",
+                        vexpand: true,
+                        child: Notifications(),
+                    }),
                 ]
             })
         },
