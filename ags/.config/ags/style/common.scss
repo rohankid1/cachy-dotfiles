@@ -1,17 +1,47 @@
 @import "./vars.scss";
 @import "./colors.scss";
 
-button {
-    all: unset;
+$button_bg: $color2;
+$button_fg: $foreground;
+$button_border: $background;
+$button_border_radius: 14px;
+
+.ro_btn {
+    background-color: $button_bg;
+    // margin-top: 10px;
+    // margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
     padding: 4px;
-    background: transparent;
-    // min-width: 20px;
-    // min-height: 20px;
-    border-radius: 16px;
+    min-width: 30px;
+    margin-left: 5px;
+    border: 2px solid $button_border;
+    min-width: 30px;
+    margin-left: 5px;
+    color: $button_fg;
+    border-radius: $button_border_radius;
 
     &:hover {
-        background: $color4;
+        background-color: mix($button_bg, $button_fg, 0.2);
+        color: invert($button_fg);
     }
+}
+
+.bar_btn {
+    // margin-top: 10px;
+    // margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+    padding: 4px;
+    border: 2px solid $foreground;
+    min-width: 30px;
+    margin-left: 5px;
+    color: $foreground;
+    border-radius: 0;
+    // border-radius: 0 14px 14px 0;
+    border-radius: 14px;
+}
+
+button {
+    all: unset;
 }
 
 

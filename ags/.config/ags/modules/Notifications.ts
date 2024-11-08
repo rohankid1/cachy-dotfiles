@@ -1,11 +1,12 @@
 import { Notification as INotification } from "types/service/notifications";
 import userPref from "userPref";
+import { getPreferredIconV2 } from "utils";
 
 // WIP section
 
 const notifications = await Service.import("notifications");
 
-const NotificationIcon = ({ app_entry, app_icon, image }: INotification) => {
+export const NotificationIcon = ({ app_entry, app_icon, image }: INotification) => {
     if (image) {
         return Widget.Box({
             vpack: "start",
@@ -59,6 +60,7 @@ export const Notification = (n: INotification) => {
         xalign: 0,
         justification: "left",
         label: n.body,
+        max_width_chars: 30,
         wrap: true,
     });
 
@@ -91,7 +93,7 @@ export const Notification = (n: INotification) => {
                     { vertical: true },
                     title,
                     body
-                )
+                ),
             ]),
             actions
         )

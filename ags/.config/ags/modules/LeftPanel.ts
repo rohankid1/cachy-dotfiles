@@ -2,9 +2,8 @@ import GLib from "types/@girs/glib-2.0/glib-2.0";
 import PopupWindow from "../widgets/PopupWindow";
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import GdkPixbuf from "types/@girs/gdkpixbuf-2.0/gdkpixbuf-2.0";
-import { getPreferredIconV2, userInfo } from "utils";
+import { userInfo } from "utils";
 import userPref from "../userPref";
-import { IconOption } from "types";
 import Grid from "widgets/Grid";
 
 const { query } = await Service.import("applications");
@@ -32,21 +31,6 @@ const Calendar = Widget.Calendar({
     class_name: "panel_left_calendar",
 });
 
-// const Header = Widget.Box({
-//     vpack: "start",
-//     hpack: "end",
-//     hexpand: true,
-//     class_name: "panel_left_header",
-//     children: [
-//         Widget.Button({
-//             child: getPreferredIconV2("close")!,
-//             on_clicked: () => {
-//                 App.closeWindow("LeftPanel");
-//             }
-//         }),
-//     ]
-// });
-
 const Profile = () => {
     return Widget.Box({
         vertical: false,
@@ -62,8 +46,9 @@ const Profile = () => {
             }),
             Widget.Box({
                 vertical: true,
-                vpack: "baseline",
-                hpack: "end",
+                hexpand: true,
+                vpack: "start",
+                hpack: "fill",
                 children: [
                     Widget.Label({ label: "System", css: `font-size: larger; font-weight: bold; margin-top: 10px;` }),
                     Widget.Label({ label: userInfo.os.bind() }),
@@ -75,7 +60,7 @@ const Profile = () => {
 }
 
 const Note = () => {
-    const TextView = Widget.subclass(Gtk.TextView, "AgsTextView");
+    const TextView = Widget.subclass(Gtk.TextView);
 
     return Widget.Box({
         vertical: true,
@@ -88,6 +73,7 @@ const Note = () => {
                 hscroll: "never",
                 vscroll: "automatic",
                 child: TextView({
+                    css: `background: @background;`,
                     class_name: "panel_left_note",
                     /* @ts-ignore */
                     wrap_mode: Gtk.WrapMode.WORD_CHAR,
@@ -117,7 +103,7 @@ const FavouriteApps = () => {
                     apps.map(app => Widget.Button({
                         vexpand: false,
                         hexpand: true,
-                        class_name: "favourite_app",
+                        class_names: ["ro_btn", "favourite_app"],
                         child: Widget.Icon({ icon: app.icon_name || "", size: 24 }),
                         tooltip_text: app.name,
                         on_clicked: () => {
@@ -145,7 +131,8 @@ const SystemOptions = () => {
         }
 
         const button = Widget.Button({
-            class_name: "grid_system_opts",
+            class_name: "ro_btn",
+            css: `min-height: 24px;`,
             hexpand: true,
             child: Widget.Icon({ icon: option.icon }),
             tooltip_text: option.name,

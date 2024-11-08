@@ -7,16 +7,12 @@
     padding: 14px;
 }
 
-.panel_left_calendar {
-    background: $color2;
-    color: $foreground;
-    border-radius: 10px;
-}
-
 .panel_left_scrollable_note {
     padding: 5px;
     border-radius: 10px;
     background: $color2;
+    color: invert($color2);
+    border: 5px solid $color15;
 }
 
 .panel_left_avatar {
@@ -28,12 +24,11 @@
     background-position: center;
 }
 
-// .panel_left_note {}
-
 .panel_left_profile_container {
     border-radius: 10px;
     padding: 5px;
     background-color: $color2;
+    border: 5px solid $color15;
 }
 
 .grid_system_opts {
@@ -44,7 +39,8 @@
     color: $foreground;
 
     &:hover {
-        background: $color0;
+        background: $color3;
+        color: $color0;
     }
 }
 
@@ -57,5 +53,33 @@
 
     &:hover {
         background: $color0;
+    }
+}
+
+
+calendar.panel_left_calendar {
+    all: unset;
+    background-color: $color2;
+    color: $foreground;
+    border-radius: 10px;
+    // padding: .5em;
+    padding: 7px;
+    border: 5px solid $color15;
+    font-size: 12px;
+
+    &:selected {
+        background-color: $color13;
+        border-radius: 8px;
+        // border: 3px solid red;
+    }
+
+    &:indeterminate {
+        color: transparentize($foreground, 0.9);
+    }
+
+    .header {
+        margin-top: 10px;
+        padding: 2px;
+        border: none;
     }
 }

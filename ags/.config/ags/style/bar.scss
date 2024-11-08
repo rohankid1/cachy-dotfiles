@@ -1,84 +1,63 @@
 @import "./colors";
 @import "./vars.scss";
+@import "./common.scss";
 
 window.RoBar {
-    background: $background;
-    color: $color1;
+  background: transparent;
+  color: $color1;
 
-    button {
-        transition: border-color .3s ease-in-out;
-        border-radius: 999px;
-        border: 2px solid $foreground;
-        // background-color: $color2;
-        min-width: 14px;
-        min-height: 14px;
-        // min-height: 14px;
-        color: $foreground;
+  button.ws {
+    transition: border-color .3s ease-in-out;
+    border-radius: 999px;
+    border: 2px solid $foreground;
+    // background-color: $color2;
+    min-width: 14px;
+    min-height: 14px;
+    // min-height: 14px;
+    color: $foreground;
+  }
+
+  .panel_toggler,
+  .np_toggler,
+  .workspaces,
+  .media,
+  .date,
+  .tray {
+    @extend .bar_btn;
+    @extend .ro_btn;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .workspaces {
+    .ws {
+      transition: background-color 0.3s ease-in-out;
+      border-color: $foreground;
+      color: $foreground;
+      margin-left: 5px;
+
+      &:last-child {
+        margin-right: 5px;
+      }
     }
 
-    .panel_toggler,
-    .np_toggler,
-    .workspaces,
-    .media,
-    .date,
-    .tray {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        transition: background-color 0.3s ease-in-out;
-        padding: 4px;
-        border: 2px solid $foreground;
-        min-width: 30px;
-        margin-left: 5px;
-        color: $foreground;
-        border-radius: 0;
-        // border-radius: 0 14px 14px 0;
-        border-radius: 14px;
+    .focused {
+      border-color: $color13;
+      background-color: $color0;
     }
+  }
 
-    .workspaces {
-        .ws {
-            transition: background-color 0.3s ease-in-out;
-            border-color: $foreground;
-            color: $foreground;
-            margin-left: 5px;
+  .tray-item {
+    border: 2px solid $background;
+    padding: 4px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
 
-            &:last-child {
-                margin-right: 5px;
-            }
-        }
-
-        .focused {
-            border-color: $color13;
-            background-color: $color0;
-        }
+    &:last-child {
+      margin-right: 5px;
     }
-
-    .tray-item {
-        border: 2px solid $background;
-        padding: 4px;
-        margin-left: 5px;
-        margin-top: 2px;
-
-        &:last-child {
-            margin-right: 5px;
-        }
-    }
-
-    // .panel_toggler,
-    // .np_toggler,
-    // .date,
-    // .tray,
-    // .workspaces {
-    //     margin-left: 10px;
-    //     // margin-top: 10px;
-    //     padding: 8px;
-    //     background-color: transparentize($background, 0.6);
-    //     border: 2px solid $cursor;
-    //     color: $foreground;
-    //     border-radius: 99px;
-
-    //     *:not(:first-child) {
-    //         margin-left: 6px;
-    //     }
-    // }
+  }
 }
