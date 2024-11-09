@@ -1,13 +1,12 @@
-import GLib from "types/@girs/glib-2.0/glib-2.0";
 import PopupWindow from "../widgets/PopupWindow";
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import GdkPixbuf from "types/@girs/gdkpixbuf-2.0/gdkpixbuf-2.0";
-import { userInfo } from "utils";
+import { getPreferredIconV2, userInfo } from "utils";
 import userPref from "../userPref";
 import Grid from "widgets/Grid";
 
-const { query } = await Service.import("applications");
 const audio = await Service.import("audio");
+const { terminal, browser, fm } = userPref.apps;
 
 const greeter = Variable("", {
     poll: [1000, () => {
@@ -50,7 +49,7 @@ const Profile = () => {
                 vpack: "start",
                 hpack: "fill",
                 children: [
-                    Widget.Label({ label: "System", css: `font-size: larger; font-weight: bold; margin-top: 10px;` }),
+                    Widget.Label({ label: "System", css: `font-size: larger; font-weight: bold;` }),
                     Widget.Label({ label: userInfo.os.bind() }),
                     Widget.Label({ label: userInfo.uptime.bind() }),
                 ],
@@ -87,32 +86,48 @@ const Note = () => {
     });
 };
 
-const FavouriteApps = () => {
-    const apps = query("").slice(0, 3);
+const Apps = () => {
+    const browserIcon = getPreferredIconV2("browser") || Widget.Label(browser.icon);
+    const terminalIcon = getPreferredIconV2("terminal") || Widget.Label(terminal.icon);
+    const fileManagerIcon = getPreferredIconV2("file_manager") || Widget.Label(fm.icon);
+
+    function Button({ icon, app }) {
+        return Widget.Button({
+            class_names: ["ro_btn", "favourite_app"],
+            vexpand: false,
+            hexpand: true,
+            child: icon,
+            tooltip_text: app.name,
+            on_clicked: () => {
+                if (Object.hasOwn(app, "terminal")) {
+                    if (app.terminal) {
+                        Utils.execAsync([terminal.name, `-e`, app.name]);
+                        App.closeWindow("LeftPanel");
+                        return;
+                    }
+                }
+
+                Utils.execAsync(app.name);
+                App.closeWindow("LeftPanel");
+            }
+        });
+    }
 
     return Widget.Box({
         vertical: true,
         spacing: 6,
         children: [
-            Widget.Label({ label: "Favourites", css: `font-size: 24px; font-weight: bolder;` }),
+            Widget.Label({ label: "Quick Access", css: `font-size: 24px; font-weight: bolder;` }),
             Widget.Box({
-                // vexpand: true,
+                vertical: false,
                 spacing: 8,
                 height_request: 20,
-                children:
-                    apps.map(app => Widget.Button({
-                        vexpand: false,
-                        hexpand: true,
-                        class_names: ["ro_btn", "favourite_app"],
-                        child: Widget.Icon({ icon: app.icon_name || "", size: 24 }),
-                        tooltip_text: app.name,
-                        on_clicked: () => {
-                            app.launch();
-                            App.closeWindow("LeftPanel");
-                        },
-                    }
-                    )),
-            })
+                children: [
+                    Button({ icon: browserIcon, app: browser }),
+                    Button({ icon: terminalIcon, app: terminal }),
+                    Button({ icon: fileManagerIcon, app: fm }),
+                ]
+            }),
         ]
     });
 };
@@ -193,7 +208,7 @@ const Content = () => Widget.Box({
         Profile(),
         Calendar,
         Note(),
-        FavouriteApps(),
+        Apps(),
         SystemOptions(),
     ]
 });
