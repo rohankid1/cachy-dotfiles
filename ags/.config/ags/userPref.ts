@@ -16,8 +16,14 @@ export default {
         labelled: false,
     },
     apps: {
-        browser: "zen-browser",
-        terminal: "kitty",
+        browser: {
+            name: "zen-twilight",
+            icon: "",
+        },
+        terminal: {
+            name: "kitty",
+            icon: "",
+        },
         fm: {
             name: "yazi",
             terminal: true,

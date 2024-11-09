@@ -4,20 +4,32 @@ export type SystemOption = {
     icon: string,
 };
 
+export type BrowserOptions = {
+    name: string,
+    icon: string,
+};
+
+export type TerminalOptions = {
+    name: string,
+    icon: string,
+};
+
+export type FileManagerOptions = {
+    /**
+     * The name of the terminal to execute.
+    */
+    name: string,
+    /** 
+     * Whether the terminal should run in a terminal.
+     * Needed if your terminal is a TUI such as Yazi, Ranger, etc.
+     */
+    terminal: boolean
+};
+
 export type AppsOptions = {
-    browser: string,
-    terminal: string,
-    fm: {
-        /**
-         * The name of the terminal to execute.
-         */
-        name: string,
-        /** 
-         * Whether the terminal should run in a terminal.
-         * Needed if your terminal is a TUI such as Yazi, Ranger, etc.
-         */
-        terminal: true,
-    },
+    browser: BrowserOptions,
+    terminal: TerminalOptions,
+    fm: FileManagerOptions,
     sys_opts: {
         show_first: "ws" | "sys",
         show_default_after_clicked: boolean,
