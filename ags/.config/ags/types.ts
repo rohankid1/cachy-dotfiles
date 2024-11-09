@@ -23,7 +23,8 @@ export type FileManagerOptions = {
      * Whether the terminal should run in a terminal.
      * Needed if your terminal is a TUI such as Yazi, Ranger, etc.
      */
-    terminal: boolean
+    terminal: boolean,
+    icon: string,
 };
 
 export type AppsOptions = {

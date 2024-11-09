@@ -27,6 +27,7 @@ export default {
         fm: {
             name: "yazi",
             terminal: true,
+            icon: "",
         },
         wpc: {
             wallpaper_directory: "/home/rohan/Pictures/wallpapers",
