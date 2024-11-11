@@ -6,11 +6,18 @@ menu {
     padding: 8px;
     background: $background;
     border: 2px solid $cursor;
+
+    separator {
+        background: lighten($background, 50%);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
 
 menuitem {
     background: transparent;
     border-radius: 5px;
+    padding: 8px;
     color: $foreground;
 
     &:hover {

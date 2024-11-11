@@ -210,10 +210,16 @@ menu {
   background: #39134c;
   border: 2px solid #a2c0e1;
 }
+menu separator {
+  background: #bf7fdf;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 menuitem {
   background: transparent;
   border-radius: 5px;
+  padding: 8px;
   color: #a2c0e1;
 }
 menuitem:hover {
