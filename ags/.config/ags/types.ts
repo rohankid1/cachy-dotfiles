@@ -95,12 +95,35 @@ export type NotificationOptions = {
     position: Array<"top" | "right" | "bottom" | "left">,
 };
 
+export type DesktopShortcutMenus = {
+    /**
+     * The name of the item that will appear in the desktop menu
+     */
+    name: string,
+    /**
+     * The script that will be executed when the user clicks on this item
+     */
+    script: string,
+    /**
+     * Should this item be a separator instead of an item?
+     * 
+     * If true, the name and the script properties will be ignored
+     * if you have them set.
+     */
+    separator: boolean,
+};
+
+export type DesktopOptions = {
+    shortcuts: DesktopShortcutMenus[];
+};
+
 export type Config = {
     restart_on_cfg_change: boolean,
     apps: AppsOptions,
     left_panel: LeftPanelOptions,
     right_panel: RightPanelOptions,
     notifications: NotificationOptions,
+    desktop: DesktopOptions,
     icons: {
         icons: IconOption[],
         workspace_icons: string[],
