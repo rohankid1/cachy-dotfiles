@@ -1,11 +1,6 @@
-import { IconOption } from "types";
-import Gio from "types/@girs/gio-2.0/gio-2.0";
 import { Notification } from "types/service/notifications";
-import userPref from "userPref";
 import { getPreferredIconV2 } from "utils";
 import PopupWindow from "widgets/PopupWindow";
-import { Notification as Notif, NotificationIcon } from "./Notifications";
-import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import Pango from "types/@girs/pango-1.0/pango-1.0";
 
 const notifications = await Service.import("notifications");
@@ -34,7 +29,12 @@ function NotificationItem(n: Notification) {
                 class_name: `panel_right_notification_summary`,
                 vpack: "start",
                 hpack: "start",
+                vexpand: false,
                 hexpand: true,
+                max_width_chars: 32,
+                wrap_mode: Pango.WrapMode.WORD_CHAR,
+                ellipsize: Pango.EllipsizeMode.END,
+                tooltip_text: n.summary,
                 label: n.summary,
             }),
             Widget.Label({
