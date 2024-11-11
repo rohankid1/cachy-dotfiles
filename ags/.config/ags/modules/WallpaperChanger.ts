@@ -126,7 +126,8 @@ export default function WP() {
       children: [Header(), Content()],
     }),
     setup: (win) => {
-      win.set_default_size(200, 300);
+      win.set_default_size(300, 720);
+      win.set_resizable(false);
     },
   });
 
