@@ -206,9 +206,9 @@ const Content = () => Widget.Box({
         // Header,
         Widget.Label({ label: greeter.bind(), css: `font-size: 24px; font-weight: bolder;` }),
         Profile(),
+        Apps(),
         Calendar,
         Note(),
-        Apps(),
         SystemOptions(),
     ]
 });
