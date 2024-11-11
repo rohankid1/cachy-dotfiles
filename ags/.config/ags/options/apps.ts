@@ -1,4 +1,12 @@
-import { AppsOptions, BrowserOptions, FileManagerOptions, TerminalOptions, WallpaperChangerOptions } from "types";
+import { AppsOptions, BrowserOptions, FileManagerOptions, SystemOption, TerminalOptions, WallpaperChangerOptions } from "types";
+
+function opt(name: string, script: string, icon: string): SystemOption {
+    return {
+        name,
+        script,
+        icon
+    };
+}
 
 const browser: BrowserOptions = {
     name: "zen-browser",
@@ -29,46 +37,14 @@ const wpc: WallpaperChangerOptions = {
 
 const system_options = {
     opts: [
-        {
-            name: "Shutdown",
-            script: "poweroff",
-            icon: "system-shutdown-symbolic",
-        },
-        {
-            name: "Reboot",
-            script: "reboot",
-            icon: "system-reboot-symbolic"
-        },
-        {
-            name: "Logout",
-            script: "hyprctl dispatch exit",
-            icon: "system-log-out"
-        },
-        {
-            name: "Lock",
-            script: "hyprlock",
-            icon: "system-lock-screen-symbolic"
-        },
-        {
-            name: "Search Applications",
-            script: "/usr/bin/ags -t rolauncher",
-            icon: "system-search-symbolic"
-        },
-        {
-            name: "Wallpaper",
-            script: "/usr/bin/ags -t WallpaperChanger",
-            icon: "preferences-desktop-wallpaper"
-        },
-        {
-            name: "Color Picker",
-            script: "hyprpicker -a",
-            icon: "color-select-symbolic"
-        },
-        {
-            name: "Reload",
-            script: "/home/rohan/.config/ags/scripts/reload-ags.sh",
-            icon: "view-refresh",
-        }
+        opt("Shutdown", "poweroff", "system-shutdown-symbolic"),
+        opt("Reboot", "reboot", "system-reboot-symbolic"),
+        opt("Logout", "hyprctl dispatch exit", "system-log-out"),
+        opt("Lock", "hyprlock", "system-lock-screen-symbolic"),
+        opt("Search Applications", "/usr/bin/ags -t rolauncher", "system-search-symbolic"),
+        opt("Wallpaper", "/usr/bin/ags -t WallpaperChanger", "preferences-desktop-wallpaper"),
+        opt("Colour Picker", "hyprpicker -a", "color-select-symbolic"),
+        opt("Reload", "~/.config/ags/scripts/reload-ags.sh", "view-refresh"),
     ]
 };
 
