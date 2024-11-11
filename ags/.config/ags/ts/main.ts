@@ -41,5 +41,12 @@ if (userPref.restart_on_cfg_change) {
 
 App.config({
   style: "./style/style.css",
-  windows: [Bar(0), AppLauncher(), WP(), LeftPanel(), RightPanel(), Notifications()],
+  windows: [
+    Notifications(),
+    Bar(0),
+    AppLauncher(),
+    LeftPanel(),
+    RightPanel(),
+    WP(),
+  ],
 });
