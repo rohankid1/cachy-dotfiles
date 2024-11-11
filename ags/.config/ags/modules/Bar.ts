@@ -38,6 +38,7 @@ function SysTray() {
   const items = tray.bind("items").as((items) =>
     items.map((item) =>
       Widget.Button({
+        vpack: "center",
         class_name: "tray-item",
         child: Widget.Icon({ icon: item.bind("icon") }),
         on_primary_click: (_, event) => item.activate(event),
