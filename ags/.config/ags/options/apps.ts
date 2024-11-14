@@ -44,7 +44,7 @@ const system_options = {
         opt("Search Applications", "/usr/bin/ags -t rolauncher", "system-search-symbolic"),
         opt("Wallpaper", "/usr/bin/ags -t WallpaperChanger", "preferences-desktop-wallpaper"),
         opt("Colour Picker", "hyprpicker -a", "color-select-symbolic"),
-        opt("Reload", "~/.config/ags/scripts/reload-ags.sh", "view-refresh"),
+        opt("Reload", "/home/rohan/.config/ags/scripts/reload-ags.sh", "view-refresh"),
     ]
 };
 
