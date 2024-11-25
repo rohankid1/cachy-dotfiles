@@ -1,8 +1,5 @@
 import { Notification as INotification } from "types/service/notifications";
 import userPref from "userPref";
-import { getPreferredIconV2 } from "utils";
-
-// WIP section
 
 const notifications = await Service.import("notifications");
 
@@ -107,6 +104,8 @@ export default (monitor: number = 0) => {
     });
 
     const onNotified = (_, id: number) => {
+        if (notifications.dnd) return;
+
         const n = notifications.getNotification(id);
         if (n)
             list.children = [Notification(n), ...list.children];
@@ -119,12 +118,6 @@ export default (monitor: number = 0) => {
     list.hook(notifications, onNotified, "notified")
         .hook(notifications, onDismissed, "dismissed");
 
-    const revealer = Widget.Revealer({
-        transition: "slide_left",
-        transition_duration: 400,
-        child: list,
-    });
-
     return Widget.Window({
         monitor,
         name: `notifications-${monitor}`,
@@ -134,7 +127,7 @@ export default (monitor: number = 0) => {
             css: `min-width: 2px; min-height: 2px;`,
             class_name: `notifications`,
             vertical: true,
-            child: revealer,
+            child: list,
         })
     });
 };
