@@ -41,8 +41,8 @@ const system_options = {
         opt("Reboot", "reboot", "system-reboot-symbolic"),
         opt("Logout", "hyprctl dispatch exit", "system-log-out"),
         opt("Lock", "hyprlock", "system-lock-screen-symbolic"),
-        opt("Search Applications", "/usr/bin/ags -t rolauncher", "system-search-symbolic"),
-        opt("Wallpaper", "/usr/bin/ags -t WallpaperChanger", "preferences-desktop-wallpaper"),
+        opt("Search Applications", "agsv1 -t rolauncher", "system-search-symbolic"),
+        opt("Wallpaper", "agsv1 -t WallpaperChanger", "preferences-desktop-wallpaper"),
         opt("Colour Picker", "hyprpicker -a", "color-select-symbolic"),
         opt("Reload", "/home/rohan/.config/ags/scripts/reload-ags.sh", "view-refresh"),
     ]
