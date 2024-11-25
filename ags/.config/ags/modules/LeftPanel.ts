@@ -1,7 +1,7 @@
 import PopupWindow from "../widgets/PopupWindow";
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import GdkPixbuf from "types/@girs/gdkpixbuf-2.0/gdkpixbuf-2.0";
-import { getPreferredIconV2, userInfo } from "utils";
+import { cacheDir, getPreferredIconV2, userInfo } from "utils";
 import userPref from "../userPref";
 import Grid from "widgets/Grid";
 
@@ -9,7 +9,7 @@ const audio = await Service.import("audio");
 const { terminal, browser, fm } = userPref.apps;
 
 const greeter = Variable("", {
-    poll: [1000, () => {
+    poll: [60_000, () => {
         const hour = new Date().getHours();
         let greeter = "";
 
@@ -79,7 +79,19 @@ const Note = () => {
                     setup(self) {
                         /* @ts-ignore */
                         self.bind();
+                        Utils.readFileAsync(`${cacheDir}/note`)
+                            .then((data) => {
+                                self.buffer.set_text(data, -1);
+                            })
+                            .catch(print);
                     },
+                }).keybind("Alt_L", (self, _e) => {
+                    const start = self.buffer.get_start_iter();
+                    const end = self.buffer.get_end_iter();
+                    const text = self.buffer.get_text(start, end, true) || " ";
+                    Utils.writeFile(text, `${cacheDir}/note`)
+                        .then(_ => print("successfully updated note"))
+                        .catch(print);
                 }),
             })
         ]
@@ -161,7 +173,7 @@ const SystemOptions = () => {
 
         grid.attach(button, column, row, 1, 1);
 
-        column += 1;
+        column += 1
     }
 
     const VolumeAdjuster = Widget.Box({
