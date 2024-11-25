@@ -1,6 +1,5 @@
 import userPref from "userPref";
 import * as Types from "types";
-import GLib from "types/@girs/glib-2.0/glib-2.0";
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 
 const user = Utils.USER;
