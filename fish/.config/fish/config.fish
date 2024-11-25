@@ -21,5 +21,6 @@ alias free 'free -h --si'
 alias icat 'kitten icat'
 alias ls 'eza -la --icons --color=always --smart-group --group-directories-first'
 alias hx helix
+alias fabric 'python -m fabric'
 
-starship init fish | source
+# starship init fish | source

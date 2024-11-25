@@ -1,6 +1,6 @@
 if pgrep -l ags; then
   pkill ags
-  /usr/bin/ags
+  agsv1
 else
-  /usr/bin/ags
+  agsv1
 fi
