@@ -19,6 +19,7 @@ const icons = [
     i("skip", "󰒭", "media-skip-forward"),
     i("previous", "󰒮", "media-skip-backward"),
     i("notification_bell", "", ""),
+    i("dnd_bell", "", ""),
     i("clear_all", "󰎟", "edit-clear-all-symbolic")
 ] as IconOption[];
 
