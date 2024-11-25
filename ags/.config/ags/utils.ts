@@ -3,12 +3,13 @@ import * as Types from "types";
 import GLib from "types/@girs/glib-2.0/glib-2.0";
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 
-const user = GLib.getenv("USER") || "User";
+const user = Utils.USER;
 
 export const scriptsDir = `${App.configDir}/scripts`;
 export const styleDir = `${App.configDir}/style`;
 export const pywalDir = `/home/${user}/.cache/wal`;
 export const optsDir = `${App.configDir}/options`;
+export const cacheDir = `${Utils.CACHE_DIR}/ro`;
 
 export const userInfo = {
     host: Variable(user.charAt(0).toUpperCase() + user.slice(1)),
