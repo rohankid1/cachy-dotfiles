@@ -1,11 +1,12 @@
 import Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import userPref from "userPref";
 import { MprisPlayer } from "types/service/mpris";
-import { getPreferredIconV2 } from "utils";
+import { getPreferredIcon, getPreferredIconV2 } from "utils";
 
 const hyprland = await Service.import("hyprland");
 const tray = await Service.import("systemtray");
 const mpris = await Service.import("mpris");
+const notifications = await Service.import("notifications");
 const date = Variable("", { poll: [1000, `date +"%a %d %b %I:%M:%S %p"`] });
 
 function Workspaces() {
@@ -63,7 +64,7 @@ function Player(player: MprisPlayer) {
         child: Widget.Box({
           spacing: 20,
           children: [
-            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "skip")?.symbolic }),
+            getPreferredIconV2("skip")!,
             Widget.Label("Skip")
           ]
         }),
@@ -74,7 +75,7 @@ function Player(player: MprisPlayer) {
         child: Widget.Box({
           spacing: 20,
           children: [
-            Widget.Icon({ icon: userPref.icons.icons.find(i => i.name === "previous")?.symbolic }),
+            getPreferredIconV2("previous")!,
             Widget.Label("Previous")
           ],
         }),
@@ -95,13 +96,22 @@ function Player(player: MprisPlayer) {
 }
 
 function NotificationPanelToggler() {
+  const dnd = notifications.bind("dnd");
+
   return Widget.Button({
     class_name: `np_toggler`,
-    child: getPreferredIconV2("notification_bell")!,
+    child: notifications.dnd ? getPreferredIconV2("dnd_bell")! : getPreferredIconV2("notification_bell")!,
     on_clicked: () => {
       App.toggleWindow("RightPanel");
     },
-  });
+    on_secondary_click: self => {
+      notifications.dnd = !notifications.dnd;
+
+      const icon = (notifications.dnd ? getPreferredIcon("dnd_bell")! : getPreferredIcon("notification_bell")!) as string;
+      self.set_label(icon);
+    },
+    tooltip_text: dnd.as(d => d ? "Silent" : "All"),
+  })
 }
 
 function Left(): Gtk.Widget {
