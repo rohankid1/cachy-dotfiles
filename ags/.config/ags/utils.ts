@@ -8,6 +8,7 @@ const user = GLib.getenv("USER") || "User";
 export const scriptsDir = `${App.configDir}/scripts`;
 export const styleDir = `${App.configDir}/style`;
 export const pywalDir = `/home/${user}/.cache/wal`;
+export const optsDir = `${App.configDir}/options`;
 
 export const userInfo = {
     host: Variable(user.charAt(0).toUpperCase() + user.slice(1)),
