@@ -4,15 +4,15 @@ window.RoBar .workspaces,
 window.RoBar .media,
 window.RoBar .date,
 window.RoBar .tray {
-  background-color: #175AE0;
+  background-color: #A54836;
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
   min-width: 30px;
   margin-left: 5px;
-  border: 2px solid #0B0035;
+  border: 2px solid #090202;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 14px;
 }
 .ro_btn:hover, .panel_right_notification_close:hover, .rolauncher_item:hover, window.RoBar .panel_toggler:hover,
@@ -21,8 +21,8 @@ window.RoBar .workspaces:hover,
 window.RoBar .media:hover,
 window.RoBar .date:hover,
 window.RoBar .tray:hover {
-  background-color: rgb(159.726, 214.75, 242.962);
-  color: #5f280c;
+  background-color: rgb(239.85, 216.71, 180.746);
+  color: #0f264a;
 }
 
 .bar_btn, window.RoBar .panel_toggler,
@@ -33,10 +33,10 @@ window.RoBar .date,
 window.RoBar .tray {
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 0;
   border-radius: 14px;
 }
@@ -57,12 +57,12 @@ scale slider {
 }
 scale trough {
   outline: none;
-  background-color: #175AE0;
+  background-color: #A54836;
   border-radius: 24px;
   min-height: 20px;
 }
 scale highlight {
-  background-color: #a0d7f3;
+  background-color: #f0d9b5;
   border-radius: 24px;
 }
 scale fill {
@@ -71,15 +71,15 @@ scale fill {
 
 window.RoBar {
   background: transparent;
-  color: #5E10D7;
+  color: #88562F;
 }
 window.RoBar button.ws {
   transition: border-color 0.3s ease-in-out;
   border-radius: 999px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   min-width: 14px;
   min-height: 14px;
-  color: #a0d7f3;
+  color: #f0d9b5;
 }
 window.RoBar .panel_toggler,
 window.RoBar .np_toggler,
@@ -92,19 +92,19 @@ window.RoBar .tray {
 }
 window.RoBar .workspaces .ws {
   transition: background-color 0.3s ease-in-out;
-  border-color: #a0d7f3;
-  color: #a0d7f3;
+  border-color: #f0d9b5;
+  color: #f0d9b5;
   margin-left: 5px;
 }
 window.RoBar .workspaces .ws:last-child {
   margin-right: 5px;
 }
 window.RoBar .workspaces .focused {
-  border-color: #CD34FA;
-  background-color: #0B0035;
+  border-color: #B88650;
+  background-color: #090202;
 }
 window.RoBar .tray-item {
-  border: 2px solid #0B0035;
+  border: 2px solid #090202;
   margin-left: 6px;
   margin-right: 6px;
   border: none;
@@ -119,15 +119,15 @@ window.RoBar .workspaces,
 window.RoBar .media,
 window.RoBar .date,
 window.RoBar .tray {
-  background-color: #175AE0;
+  background-color: #A54836;
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
   min-width: 30px;
   margin-left: 5px;
-  border: 2px solid #0B0035;
+  border: 2px solid #090202;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 14px;
 }
 .ro_btn:hover, .panel_right_notification_close:hover, .rolauncher_item:hover, window.RoBar .panel_toggler:hover,
@@ -136,8 +136,8 @@ window.RoBar .workspaces:hover,
 window.RoBar .media:hover,
 window.RoBar .date:hover,
 window.RoBar .tray:hover {
-  background-color: rgb(159.726, 214.75, 242.962);
-  color: #5f280c;
+  background-color: rgb(239.85, 216.71, 180.746);
+  color: #0f264a;
 }
 
 .bar_btn, window.RoBar .panel_toggler,
@@ -148,10 +148,10 @@ window.RoBar .date,
 window.RoBar .tray {
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 0;
   border-radius: 14px;
 }
@@ -172,12 +172,12 @@ scale slider {
 }
 scale trough {
   outline: none;
-  background-color: #175AE0;
+  background-color: #A54836;
   border-radius: 24px;
   min-height: 20px;
 }
 scale highlight {
-  background-color: #a0d7f3;
+  background-color: #f0d9b5;
   border-radius: 24px;
 }
 scale fill {
@@ -187,31 +187,31 @@ scale fill {
 .rolauncher {
   border-radius: 16px;
   background: transparent;
-  color: #a0d7f3;
-  border: 4px solid #175AE0;
+  color: #f0d9b5;
+  border: 4px solid #A54836;
 }
 
 .rolauncher_entry {
   outline: none;
   padding: 8px;
   border-radius: 8px;
-  border: 2px dotted #5E10D7;
-  color: #a0d7f3;
+  border: 2px dotted #88562F;
+  color: #f0d9b5;
   background: transparent;
 }
 
 .rolauncher_item {
-  background-color: #175AE0;
+  background-color: #A54836;
 }
 
 menu {
   border-radius: 20px;
   padding: 8px;
-  background: #0B0035;
-  border: 2px solid #a0d7f3;
+  background: #090202;
+  border: 2px solid #f0d9b5;
 }
 menu separator {
-  background: rgb(94.9245283019, 53, 255);
+  background: rgb(210.6363636364, 55.3636363636, 55.3636363636);
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -220,27 +220,27 @@ menuitem {
   background: transparent;
   border-radius: 5px;
   padding: 8px;
-  color: #a0d7f3;
+  color: #f0d9b5;
 }
 menuitem:hover {
-  background: #175AE0;
+  background: #A54836;
 }
 
 .panel_left_content {
   font-family: "Ubuntu";
   border-radius: 20px;
-  border: 2px solid #a0d7f3;
-  background: #0B0035;
-  color: #a0d7f3;
+  border: 2px solid #f0d9b5;
+  background: #090202;
+  color: #f0d9b5;
   padding: 14px;
 }
 
 .panel_left_scrollable_note {
   padding: 5px;
   border-radius: 10px;
-  background: #175AE0;
-  color: #e8a51f;
-  border: 5px solid #a0d7f3;
+  background: #A54836;
+  color: #5ab7c9;
+  border: 5px solid #f0d9b5;
 }
 
 .panel_left_avatar {
@@ -255,48 +255,48 @@ menuitem:hover {
 .panel_left_profile_container {
   border-radius: 10px;
   padding: 5px;
-  background-color: #175AE0;
-  border: 5px solid #a0d7f3;
+  background-color: #A54836;
+  border: 5px solid #f0d9b5;
 }
 
 .grid_system_opts {
   padding: 8px;
   font-size: large;
   border-radius: 14px;
-  background: #175AE0;
-  color: #a0d7f3;
+  background: #A54836;
+  color: #f0d9b5;
 }
 .grid_system_opts:hover {
-  background: #5658F7;
-  color: #0B0035;
+  background: #9A673A;
+  color: #090202;
 }
 
 .favourite_app {
   padding: 8px;
   font-size: large;
   border-radius: 14px;
-  background: #175AE0;
-  color: #a0d7f3;
+  background: #A54836;
+  color: #f0d9b5;
 }
 .favourite_app:hover {
-  background: #0B0035;
+  background: #090202;
 }
 
 calendar.panel_left_calendar {
   all: unset;
-  background-color: #175AE0;
-  color: #a0d7f3;
+  background-color: #A54836;
+  color: #f0d9b5;
   border-radius: 10px;
   padding: 7px;
-  border: 5px solid #a0d7f3;
+  border: 5px solid #f0d9b5;
   font-size: 12px;
 }
 calendar.panel_left_calendar:selected {
-  background-color: #CD34FA;
+  background-color: #B88650;
   border-radius: 8px;
 }
 calendar.panel_left_calendar:indeterminate {
-  color: rgba(160, 215, 243, 0.1);
+  color: rgba(240, 217, 181, 0.1);
 }
 calendar.panel_left_calendar .header {
   margin-top: 10px;
@@ -310,15 +310,15 @@ window.RoBar .workspaces,
 window.RoBar .media,
 window.RoBar .date,
 window.RoBar .tray, .rolauncher_item {
-  background-color: #175AE0;
+  background-color: #A54836;
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
   min-width: 30px;
   margin-left: 5px;
-  border: 2px solid #0B0035;
+  border: 2px solid #090202;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 14px;
 }
 .ro_btn:hover, .panel_right_notification_close:hover, window.RoBar .panel_toggler:hover,
@@ -327,8 +327,8 @@ window.RoBar .workspaces:hover,
 window.RoBar .media:hover,
 window.RoBar .date:hover,
 window.RoBar .tray:hover, .rolauncher_item:hover {
-  background-color: rgb(159.726, 214.75, 242.962);
-  color: #5f280c;
+  background-color: rgb(239.85, 216.71, 180.746);
+  color: #0f264a;
 }
 
 .bar_btn, window.RoBar .panel_toggler,
@@ -339,10 +339,10 @@ window.RoBar .date,
 window.RoBar .tray {
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 0;
   border-radius: 14px;
 }
@@ -363,12 +363,12 @@ scale slider {
 }
 scale trough {
   outline: none;
-  background-color: #175AE0;
+  background-color: #A54836;
   border-radius: 24px;
   min-height: 20px;
 }
 scale highlight {
-  background-color: #a0d7f3;
+  background-color: #f0d9b5;
   border-radius: 24px;
 }
 scale fill {
@@ -377,20 +377,20 @@ scale fill {
 
 .panel_right_content {
   font-family: "Ubuntu";
-  background-color: #0B0035;
-  color: #a0d7f3;
+  background-color: #090202;
+  color: #f0d9b5;
   padding: 14px;
   border-radius: 20px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
 }
 
 .panel_right_notification_item {
-  background-color: #175AE0;
+  background-color: #A54836;
   border-radius: 10px;
-  border: 5px solid #a0d7f3;
+  border: 5px solid #f0d9b5;
   margin-bottom: 10px;
   padding: 10px;
-  color: #a0d7f3;
+  color: #f0d9b5;
 }
 .panel_right_notification_item:first-child {
   margin-top: 25px;
@@ -399,13 +399,13 @@ scale fill {
 .panel_right_notification_summary {
   font-weight: bold;
   font-size: 1.2em;
-  border-bottom: 1px solid #0B0035;
+  border-bottom: 1px solid #090202;
 }
 
 .wpc_header {
   padding: 8px;
   margin-bottom: 10px;
-  border-bottom: 2px solid #9F0BEE;
+  border-bottom: 2px solid #A87645;
 }
 
 .wpc_content {
@@ -413,9 +413,9 @@ scale fill {
 }
 
 .wpc_grid_item_container {
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   border-radius: 14px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   padding: 8px;
 }
 
@@ -430,10 +430,10 @@ scale fill {
 
 .wpc_button {
   background: transparent;
-  border: 2px solid #9F0BEE;
+  border: 2px solid #A87645;
 }
 .wpc_button:hover {
-  background: #9F0BEE;
+  background: #A87645;
 }
 
 .notification_icon {
@@ -449,7 +449,7 @@ scale fill {
 .notification_icon image {
   font-size: 58px;
   margin: 5px;
-  background: #a0d7f3;
+  background: #f0d9b5;
 }
 
 .notification {
@@ -457,9 +457,9 @@ scale fill {
   border-radius: 14px;
   padding: 1em;
   margin: 0.5em;
-  border: 1px solid #CD34FA;
-  background: #0B0035;
-  color: #a0d7f3;
+  border: 1px solid #B88650;
+  background: #090202;
+  color: #f0d9b5;
   padding: 0.5em;
 }
 .notification .critical {
@@ -468,7 +468,7 @@ scale fill {
 
 .notification_title {
   font-family: "Ubuntu";
-  color: #a0d7f3;
+  color: #f0d9b5;
   font-weight: bold;
   font-size: 1.4em;
   margin-bottom: 4px;
@@ -503,15 +503,15 @@ window.RoBar .workspaces,
 window.RoBar .media,
 window.RoBar .date,
 window.RoBar .tray, .rolauncher_item, .panel_right_notification_close {
-  background-color: #175AE0;
+  background-color: #A54836;
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
   min-width: 30px;
   margin-left: 5px;
-  border: 2px solid #0B0035;
+  border: 2px solid #090202;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 14px;
 }
 .ro_btn:hover, window.RoBar .panel_toggler:hover,
@@ -520,8 +520,8 @@ window.RoBar .workspaces:hover,
 window.RoBar .media:hover,
 window.RoBar .date:hover,
 window.RoBar .tray:hover, .rolauncher_item:hover, .panel_right_notification_close:hover {
-  background-color: rgb(159.726, 214.75, 242.962);
-  color: #5f280c;
+  background-color: rgb(239.85, 216.71, 180.746);
+  color: #0f264a;
 }
 
 .bar_btn, window.RoBar .panel_toggler,
@@ -532,10 +532,10 @@ window.RoBar .date,
 window.RoBar .tray {
   transition: background-color 0.3s ease-in-out;
   padding: 4px;
-  border: 2px solid #a0d7f3;
+  border: 2px solid #f0d9b5;
   min-width: 30px;
   margin-left: 5px;
-  color: #a0d7f3;
+  color: #f0d9b5;
   border-radius: 0;
   border-radius: 14px;
 }
@@ -556,12 +556,12 @@ scale slider {
 }
 scale trough {
   outline: none;
-  background-color: #175AE0;
+  background-color: #A54836;
   border-radius: 24px;
   min-height: 20px;
 }
 scale highlight {
-  background-color: #a0d7f3;
+  background-color: #f0d9b5;
   border-radius: 24px;
 }
 scale fill {

@@ -20,7 +20,7 @@ const Header = () => {
     spacing: 20,
     children: [
       Widget.Button({
-        class_name: `wpc_button`,
+        class_name: `ro_btn`,
         hpack: "end",
         hexpand: false,
         child: getPreferredIconV2("close")!,
@@ -70,7 +70,7 @@ const Wallpapers = () => {
                 hpack: "center",
               }),
               Widget.Button({
-                class_name: "wpc_button",
+                class_names: ["ro_btn", "wpc_button"],
                 label: wallpaper.bind("wallpaper_path").as(w => w === filePath ? "Applied" : "Apply"),
                 sensitive: wallpaper.bind("wallpaper_path").as(w => !(w === filePath)),
                 vexpand: false,
@@ -110,13 +110,44 @@ const Wallpapers = () => {
   })
 };
 
-const Content = () =>
-  Widget.Box({
-    class_name: `wpc_content`,
+// const Content = () =>
+//   Widget.Box({
+//     class_name: `wpc_content`,
+//     children: [
+//       Widget.Button({
+//         label: "Test",
+//         vpack: "end",
+//         hpack: "start"
+//       }),
+//       Wallpapers()
+//     ]
+//   });
+
+const Content = () => {
+  const box = Widget.Box({
+    class_name: "wpc_content",
     children: [
       Wallpapers()
+    ],
+  });
+
+  const button = Widget.Button({
+    child: getPreferredIconV2("refresh")!,
+    vpack: "end",
+    hpack: "start",
+    hexpand: true,
+    on_clicked: () => {
+      box.children = [Wallpapers()];
+    },
+  });
+
+  return Widget.Box({
+    children: [
+      box,
+      button
     ]
   });
+};
 
 export default function WP() {
   const win = RegularWindow({

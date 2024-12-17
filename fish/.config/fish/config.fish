@@ -24,3 +24,5 @@ alias hx helix
 alias fabric 'python -m fabric'
 
 # starship init fish | source
+
+fish_add_path /home/rohan/.millennium/ext/bin

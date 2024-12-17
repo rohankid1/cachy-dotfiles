@@ -20,7 +20,8 @@ const icons = [
     i("previous", "󰒮", "media-skip-backward"),
     i("notification_bell", "", ""),
     i("dnd_bell", "", ""),
-    i("clear_all", "󰎟", "edit-clear-all-symbolic")
+    i("clear_all", "󰎟", "edit-clear-all-symbolic"),
+    i("refresh", "󰑐", "view-refresh-symbolic")
 ] as IconOption[];
 
 export default {
